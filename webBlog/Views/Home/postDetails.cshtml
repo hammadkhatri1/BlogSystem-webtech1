@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "postDetails";
+}
+@model webBlog.Models.viewModelBlog.vmBlog
+
+<h2>Post Details</h2>
+
+<div class="post">
+    <h3>@Model.post.postName</h3>
+    <p>@Model.post.content</p>
+    <p>posted by: @Model.post.postedBy</p>
+    <p>time : @Model.post.dateCreated</p>
+ </div>
+<div>
+    <table class="table">
+        <h2>Comments</h2>
+        @foreach (var comm in Model.comments)
+        {
+            <tr><th>@comm.userName says:</th><td> Time: @comm.timePosted</td></tr>
+                <tr><td>@comm.body</td><td></td></tr>
+                <tr><td></td><td></td></tr>
+        }
+    </table>
+    <p>@ViewBag.ErrorMessage</p>
+    <form method="post">
+        <textarea  rows="2" cols="40" name="body"> </textarea>
+        <br />
+    <input type="submit" value="comment" class="btn btn-block" />
+        
+</form>
+</div>

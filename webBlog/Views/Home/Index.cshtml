@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model webBlog.Models.viewModelBlog.vmBlog
+
+<div class="row">
+        <h2>Posts</h2>
+    <table class="table">
+        <tr>
+            <th>author </th>
+            <th>Post title</th>
+            <th>Category</th>
+        </tr>
+        @foreach (var post in Model.posts)
+        {
+            <tr>
+                <td>@post.postedBy</td>
+                <td>@Html.ActionLink(post.postName, "postDetails",new {id=post.PostId })</td>
+                <td>@post.category</td>
+            </tr>
+        }
+    </table>
+</div>

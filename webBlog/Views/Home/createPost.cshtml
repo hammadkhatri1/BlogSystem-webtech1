@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "createPost";
+}
+
+<h2>Create New Post</h2>
+<h4>logged in as: @ViewBag.usernn</h4>
+
+    <form method="post">
+        <table class="table">
+            <tr>
+                <th>post Title</th>
+                <td><input type="text" name="postName" /></td>
+            </tr>
+            <tr>
+                <th>Post Category</th>
+                <td><input type="text" name="category" /></td>
+            </tr>
+
+            <tr>
+                <th>Post Content</th>
+                <td></td>
+            </tr>
+
+        </table>
+            <textarea  style="width: 300px; height: 150px;" name="content"> </textarea>
+
+            <br />
+            <input type="submit" value="Save Post" class="btn btn-block btn-primary" />
+
+    </form>
